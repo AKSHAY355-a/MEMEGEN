@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,6 +10,7 @@ body {
     color: #333;
 }
 
+/* Header */
 header {
     background-color: #fff;
     padding: 15px 20px;
@@ -16,6 +18,15 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #ddd;
+    flex-wrap: wrap;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
 }
 
 nav a {
@@ -23,13 +34,26 @@ nav a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    padding: 10px;
 }
 
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav a {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Buttons */
 .button, .image-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px; /* Space between icon and text */
+    gap: 8px;
     padding: 12px 24px;
     border: none;
     cursor: pointer;
@@ -39,26 +63,44 @@ nav a {
     font-weight: bold;
     border-radius: 10px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    width: 200px; /* Adjust width to fit content */
+    width: 100%;
+    max-width: 200px;
     height: 50px;
     text-align: center;
-    white-space: nowrap; /* Prevents text wrapping */
+    white-space: nowrap;
 }
 
 .image-button img {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    flex-shrink: 0; /* Prevents the image from resizing */
+    flex-shrink: 0;
 }
 
-
-
-.button:hover, .buttonsub:hover , .image-button:hover {
+.button:hover, .buttonsub:hover, .image-button:hover {
     transform: scale(1.05);
     background-color: #ff5722;
 }
 
+.buttonJ, .buttonS {
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    background-color: wheat;
+    color: black;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    margin: 5px;
+    border: 1px black solid;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.buttonJ:hover, .buttonS:hover {
+    transform: scale(1.05);
+    background-color: #ff5722;
+}
+
+/* Main Content */
 .main-content {
     flex-grow: 1;
     text-align: center;
@@ -73,11 +115,22 @@ nav a {
     display: flex;
     gap: 15px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
+@media (max-width: 480px) {
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Placeholder for GIF */
 .placeholder {
-    width: 400px;
-    height: 300px;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 4 / 3; /* Maintains aspect ratio */
     background-color: #e0e0e0;
     display: flex;
     align-items: center;
@@ -89,13 +142,13 @@ nav a {
     overflow: hidden;
 }
 
-
 .placeholder img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
+/* Footer */
 footer {
     background-color: #f8f8f8;
     padding: 20px;
@@ -128,10 +181,19 @@ footer {
     color: #333;
 }
 
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Input and Subscribe Button */
 .footer-section input {
     padding: 12px;
     width: 250px;
-    border: 1px black solid;        
+    border: 1px black solid;
     margin-top: 10px;
     outline: none;
 }
@@ -142,32 +204,13 @@ footer {
     cursor: pointer;
     background-color: wheat;
     color: black;
-    border: 1px black solid; 
+    border: 1px black solid;
     font-weight: bold;
     transition: transform 0.3s ease-in-out;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-
 }
 
 .buttonsub:hover {
-    transform: scale(1.05);
-    background-color: #ff5722;
-}
-
-.buttonJ, .buttonS {
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    background-color: wheat;
-    color: black;
-    font-weight: bold;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    margin: 5px;
-    border: 1px black solid;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-}
-
-.buttonJ:hover, .buttonS:hover {
     transform: scale(1.05);
     background-color: #ff5722;
 }
